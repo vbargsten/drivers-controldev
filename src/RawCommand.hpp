@@ -34,6 +34,24 @@ namespace controldev {
          */
         std::vector<uint8_t> buttonValue;
     };
+
+    enum ControlMode
+    {
+        ControlOff = 0,
+        Control,
+        KeepAlive,
+        Timeout
+    };
+
+    struct ButtonMapping
+    {
+        int control_off;
+        int control;
+        int keep_alive;
+        int timeout;
+     
+        ButtonMapping() : control_off(-1), control(-1), keep_alive(-1), timeout(-1) {}
+    };
 }
 
 #endif
